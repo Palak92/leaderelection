@@ -7,10 +7,8 @@ import java.util.List;
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         Node node1 = new Node(1);
         Node node2 = new Node(8);
         Node node3 = new Node(10);
@@ -39,12 +37,12 @@ public class App
         nodes.add(node4);
         nodes.add(node5);
 
-        for(Node node : nodes) {
-            Thread nodeThread = new Thread(node.getWorkerThread()); 
+        for (Node node : nodes) {
+            Thread nodeThread = new Thread(node.getWorkerThread());
             nodeThread.start();
         }
 
-        for(Node node : nodes) {
+        for (Node node : nodes) {
             node.initiateLeaderElection();
         }
     }
